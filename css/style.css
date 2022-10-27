@@ -81,22 +81,22 @@ body {
 
 .navbar {
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
+    margin: 0 3rem;
     font-size: 1.6rem;
     display: flex;
     justify-content: space-between;
-
     display: flex;
     align-items: center;
 }
 
-.container {
+nav {
     display: flex;
     flex-grow: 1;
 }
 
 .nav-links {
-    margin: 0 6rem;
+    margin: 0 5rem;
     display: flex;
     align-items: center;
     justify-items: center;
@@ -125,17 +125,15 @@ body {
 }
 
 .register-btn {
-    border: none;
     color: var(--medium-gray);
-    font-family: inherit;
-    font-weight: inherit;
-    font-size: inherit;
-    cursor: pointer;
     background-color: var(--almost-white);
     border: 1px solid var(--medium-gray);
-    border-radius: 10px;
-    height: 3.6rem;
-    width: 10rem;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 100px;
+    padding: 1rem;
+    margin-right: 5rem;
+    cursor: pointer;
 }
 
 .register-btn:hover,
@@ -160,8 +158,7 @@ body {
     gap: 2rem;
     color: var(--medium-gray);
     background-color: #fff;
-    min-width: 15rem;
-    padding: 2rem;
+    padding: 1.8rem;
     border-radius: 1.5rem;
     box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.2);
     transition: opacity 0.25s;
@@ -170,12 +167,12 @@ body {
 
 
 .features-dropdown {
-    left: -50%;
-    transform: translate(-20%, 10%);
+    left: -25%;
+    transform: translate(-30%, 8%);
 }
 
 .company-dropdown {
-    transform: translateY(10%);
+    transform: translateY(8%);
     min-width: 12rem;
 }
 
@@ -186,6 +183,7 @@ body {
 
 .dropdown-item {
     text-decoration: none;
+    font-size: 15px;
     color: var(--medium-gray);
 }
 
@@ -203,25 +201,29 @@ body {
 
 .row {
     display: flex;
-    justify-content: space-between;
-    margin: 3.5rem 9.3%;
-   
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 7%;
 }
 
 .colmn-1 {
     position: relative;
-    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-basis: 40%;
+    padding-left: 9.5%;
 }
 
 .colmn-1 h1 {
-    margin-top: 25%;
-    font-size: 65px;
+    font-size: 60px;
 }
 
 .colmn-1 p {
     font-size: 16px;
     color: var(--medium-gray);
     font-weight: 300;
+    padding: 2rem 0;
     margin: 4rem 0;
 }
 
@@ -229,29 +231,112 @@ button {
     width: 120px;
     padding: 1.5rem;
     border-radius: 10px;
+    background: var(--almost-black);
+    color: var(--almost-white);
+    transition: .5s;
+}
+
+button:hover {
+    color: var(--almost-black);
+    background: var(--almost-white);
 }
 
 .clients {
-    margin-top: 5rem;
+    position: absolute;
+    bottom: -15rem;
 }
 
-.client {
+.clients img {
     margin-right: 2rem;
+    width: 75px;
 }
 
 .colmn-2 {
-    position: relative;
-    align-items: center;
-    flex-basis: 50%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 60%
 }
 
-.colmn-2 .desktop {
+.colmn-2 picture {
     display: flex;
+    max-width: 100vw;
+    height: 100vh;
+    padding: 2em;
+}
+
+.colmn-2 picture img {
     max-width: 100%;
-    height: 575px;
+    /* height: 100vh; */
 }
 
 .colmn-2 .mobile {
     width: 100%;
+}
+
+@media screen and (max-width: 769px) {
+    .row {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 0;
+    }
+
+    .colmn-1-content {
+        text-align: center;
+    }
+
+    .menu-btn {
+        visibility: visible;
+    }
+
+    nav {
+        margin-top: 0;
+        visibility: hidden;
+    }
+
+    nav.open {
+        visibility: visible;
+    }
+
+    nav .nav-links {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        background: rgba(124, 122, 122, 0.2);
+        list-style-type: none;
+        padding-right: 1rem;
+        transform: translateX(100%);
+        transition: all 0.5s ease-in-out;
+    }
+
+    nav .menu-nav.open {
+        transform: translateX(0);
+    }
+
+    nav .menu-nav__item {
+        transform: translateX(100vw);
+        transition: all 0.5s ease-in-out;
+    }
+
+    nav .menu-nav__item.open {
+        transform: translateX(0);
+    }
+
+    nav .menu-nav .menu-nav__item {
+        margin-bottom: 3.5rem;
+    }
+
+
+    nav .menu-nav__link {
+        display: inline-block;
+        font-size: 2rem;
+        text-transform: uppercase;
+        padding: 2rem 0;
+        font-weight: 300;
+        transition: all 0.5s ease-in-out;
+    }
 }
