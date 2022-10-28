@@ -4,7 +4,7 @@ const menuBtn = document.querySelector(".menu-btn");
 const hamburger = document.querySelector(".menu-btn__burger");
 const nav = document.querySelector("nav");
 const menuNav = document.querySelector(".nav-links");
-const navItems = document.querySelectorAll(".");
+const navItems = document.querySelectorAll(".nav-link");
 let showMenu = false;
 menuBtn.addEventListener("click", toggleMenu);
 function toggleMenu() {

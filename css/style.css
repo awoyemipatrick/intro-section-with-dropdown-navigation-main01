@@ -11,6 +11,7 @@
     margin: 0;
 }
 
+
 html {
     font-size: 62.5%;
 }
@@ -81,11 +82,8 @@ body {
 
 .navbar {
     width: 100%;
-    padding: 1rem;
-    margin: 0 3rem;
+    margin: 1.5rem 3rem;
     font-size: 1.6rem;
-    display: flex;
-    justify-content: space-between;
     display: flex;
     align-items: center;
 }
@@ -93,22 +91,30 @@ body {
 nav {
     display: flex;
     flex-grow: 1;
+    margin-left: 3rem
 }
 
 .nav-links {
-    margin: 0 5rem;
+    margin: ;
     display: flex;
     align-items: center;
     justify-items: center;
-    gap: 4rem;
+    /* gap: 4rem; */
 }
 
 .nav-link {
     display: flex;
     align-items: center;
+    margin: 0 2rem;
     gap: 5px;
     text-decoration: none;
     color: var(--medium-gray);
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+
 }
 
 .nav-link:hover,
@@ -117,11 +123,23 @@ nav {
     transition: 0.4s;
 }
 
-.login-links {
+.right {
     margin-left: auto;
+    margin-right: 2.5rem;
     display: flex;
-    align-items: center;
-    gap: 2rem;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+.right .nav-right {
+    padding: 0 1rem;
+    text-decoration: none;
+}
+
+.right .register-btn {
+    border: 1px solid;
+    padding: .5em 1.7rem;
+
 }
 
 .register-btn {
@@ -196,6 +214,7 @@ nav {
     opacity: 0;
     transition: opacity 0.25s;
 }
+
 
 /**      Main     **/
 
@@ -287,6 +306,7 @@ button:hover {
     }
 
     .menu-btn {
+        z-index: 10;
         visibility: visible;
     }
 
@@ -299,21 +319,24 @@ button:hover {
         visibility: visible;
     }
 
-    nav .nav-links {
+
+    nav {
         display: flex;
+        position: fixed;
+        z-index: 10;
         flex-flow: column;
         align-items: center;
+        margin-top: 25rem;
         justify-content: center;
         height: 100vh;
-        overflow: hidden;
-        background: rgba(124, 122, 122, 0.2);
+        width: -100%;
+        background: var(--almost-white);
         list-style-type: none;
-        padding-right: 1rem;
         transform: translateX(100%);
         transition: all 0.5s ease-in-out;
     }
 
-    nav .menu-nav.open {
+    nav .nav-links.open {
         transform: translateX(0);
     }
 
@@ -326,17 +349,46 @@ button:hover {
         transform: translateX(0);
     }
 
-    nav .menu-nav .menu-nav__item {
+    nav .nav-links{
         margin-bottom: 3.5rem;
     }
 
+    .nav-links {
+        list-style-type: none;
+        display: block;
 
-    nav .menu-nav__link {
+    }
+
+    .right {
+        display: flex;
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .right .nav-link {
+        text-align: center;
+
+    }
+
+    .right .register-btn {
+        display: inline-block;
+        text-align: center;
+        margin-left: 5rem;
+        margin-top: 2rem;
+        width: 150px;
+    }
+    
+
+    nav .nav-links {
+        padding: 2rem 0;
         display: inline-block;
         font-size: 2rem;
         text-transform: uppercase;
         padding: 2rem 0;
-        font-weight: 300;
+        /* font-weight: 300; */
         transition: all 0.5s ease-in-out;
     }
+
 }
