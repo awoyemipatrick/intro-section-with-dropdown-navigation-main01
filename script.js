@@ -39,7 +39,6 @@ const companyContent = document.querySelector('.company-dropdown');
 let browserWidth = window.innerWidth;
 
 
-
 //  Navbar
 
 navbar.addEventListener('click', e => {
